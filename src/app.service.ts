@@ -2,7 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!444444444455556666666666';
+  getHello(): any {
+    return {
+      message: 'Hello from NestJS on Vercel!',
+      status: 'OK',
+      timestamp: new Date().toISOString(),
+    };
   }
 }

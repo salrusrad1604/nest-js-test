@@ -1,13 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
+  constructor(private appService: AppService) {}
+
   @Get()
   getHello() {
-    return {
-      message: 'Hello from NestJS on Vercel!',
-      status: 'OK',
-      timestamp: new Date().toISOString(),
-    };
+    return this.appService.getHello();
   }
 }

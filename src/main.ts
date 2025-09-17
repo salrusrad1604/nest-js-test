@@ -32,10 +32,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Включение CORS для Vercel
   app.enableCors({
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    origin: true,
     credentials: true,
   });
 
@@ -47,6 +45,10 @@ async function bootstrap() {
   // Для Vercel используем порт из env или 3000
   const port = process.env.PORT || 3000;
   await app.listen(port);
+
+  console.log(`Server running on port ${port}`);
+
+  return app;
 }
 
 // Запуск для Vercel

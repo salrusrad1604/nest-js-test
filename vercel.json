@@ -17,10 +17,5 @@
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization, Accept"
       }
     }
-  ],
-  "functions": {
-    "src/main.ts": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
